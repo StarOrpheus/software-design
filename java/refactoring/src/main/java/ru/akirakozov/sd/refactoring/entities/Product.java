@@ -1,4 +1,4 @@
-package ru.akirakozov.sd.refactoring;
+package ru.akirakozov.sd.refactoring.entities;
 
 public class Product {
     private final String name;

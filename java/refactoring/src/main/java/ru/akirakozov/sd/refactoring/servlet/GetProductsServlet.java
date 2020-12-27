@@ -1,6 +1,6 @@
 package ru.akirakozov.sd.refactoring.servlet;
 
-import ru.akirakozov.sd.refactoring.Product;
+import ru.akirakozov.sd.refactoring.entities.Product;
 import ru.akirakozov.sd.refactoring.dao.ProductDao;
 
 import javax.servlet.http.HttpServlet;
@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 /**
  * @author akirakozov

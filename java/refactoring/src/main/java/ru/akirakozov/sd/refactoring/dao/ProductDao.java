@@ -1,6 +1,6 @@
 package ru.akirakozov.sd.refactoring.dao;
 
-import ru.akirakozov.sd.refactoring.Product;
+import ru.akirakozov.sd.refactoring.entities.Product;
 
 import java.sql.*;
 import java.util.ArrayList;
