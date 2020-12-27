@@ -2,6 +2,7 @@ package ru.akirakozov.sd.refactoring.servlet;
 
 import ru.akirakozov.sd.refactoring.entities.Product;
 import ru.akirakozov.sd.refactoring.dao.ProductDao;
+import ru.akirakozov.sd.refactoring.html.HtmlBuilder;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,14 +22,14 @@ public class GetProductsServlet extends HttpServlet {
         try {
             try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
                 var result = dao.getAll();
-                response.getWriter().println("<html><body>");
+                var writer = new HtmlBuilder();
 
                 for (Product p : result) {
                     String name = p.getName();
                     int price  = p.getPrice();
-                    response.getWriter().println(name + "\t" + price + "</br>");
+                    writer.brLine(name + "\t" + price);
                 }
-                response.getWriter().println("</body></html>");
+                response.getWriter().println(writer.toString());
             }
 
         } catch (Exception e) {
