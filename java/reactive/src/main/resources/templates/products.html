@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+    <title>Products</title>
+</head>
+<body>
+<main>
+    <div th:with="user_present = ${login != null}">
+        <div th:if="${user_present}">
+            <a th:href="@{/save_product}">Add new product</a>
+        </div>
+    </div>
+    <ol>
+        <li th:each="product : ${products}">
+            <p th:text="'Name: ' + ${product.productName}"></p>
+            <p th:text="'Price: ' + ${product.price}"></p>
+            <p th:text="'Currency: ' + ${product.currency}"></p>
+        </li>
+    </ol>
+</main>
+</body>
+</html>

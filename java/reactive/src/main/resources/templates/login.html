@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<main>
+    <h3>Login:</h3>
+    <form th:object="${user}" method="POST" th:action="@{/login}">
+        <label for="user_login">Login</label>
+        <input id="user_login" type="text" th:field="*{login}" minlength="3" maxlength="24"/>
+        <input id="login" type="submit" th:value="login">
+    </form>
+</main>
+</body>
+</html>
